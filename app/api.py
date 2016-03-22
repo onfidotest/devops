@@ -27,7 +27,7 @@ def get_value():
     except redis.ConnectionError as e:
         return jsonify({"status": "redis connection error"})
     else:
-        return jsonify({"status": "ok", "data": data})
+        return jsonify({"status": "ok", "data": int(data)})
 
 
 if __name__ == "__main__":
