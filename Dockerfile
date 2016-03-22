@@ -1,9 +1,9 @@
 FROM phusion/baseimage:0.9.18
 
-ENTRYPOINT ["python3"]
-CMD ["api.py"]
-ENV ENV production
+CMD ["python3", "api.py"]
+ENV ENV docker
 ENV DEPLOY_FLD /var/www/onfido/app
+ENV REDIS_HOST redis
 
 RUN mkdir -p ${DEPLOY_FLD}
 WORKDIR ${DEPLOY_FLD}
