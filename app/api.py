@@ -34,6 +34,8 @@ if __name__ == "__main__":
     env = os.getenv('ENV', 'production')
     if env == 'production':
         app.run()
+    elif env == 'docker':
+        app.run(host='0.0.0.0')
     elif env == 'development':
         app.run(host='0.0.0.0', debug=True)
     else:
